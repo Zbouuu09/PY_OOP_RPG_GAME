@@ -1,4 +1,4 @@
-package rpgspace.service;
+package RPGspace2.service;
 
 import RPGspace.model.DamageAbility;
 import RPGspace.model.Enemy;

@@ -1,4 +1,4 @@
-package RPGspace.service;
+package RPGspace2.service;
 
 import RPGspace.model.GameState;
 
