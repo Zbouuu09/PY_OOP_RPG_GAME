@@ -147,21 +147,4 @@ public class Player extends Character {
         return "XP: " + xp + "/" + xpToNextLevel;
     }
 
-    public String getShipArt() {
-        String model = shipModel.toLowerCase();
-
-        if (model.contains("cazador")) {
-            return "    /\\\n" +
-                    "===<===>\n" +
-                    "    \\/";
-        } else if (model.contains("exploradora")) {
-            return "   __|__\n" +
-                    "--o---o--\n" +
-                    "   /_\\";
-        } else {
-            return "  |\\___/|\n" +
-                    "==|_o_o_|==\n" +
-                    "    /_\\";
-        }
-    }
 }

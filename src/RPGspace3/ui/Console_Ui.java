@@ -26,7 +26,7 @@ public class Console_Ui {
 
     public void start() {
         System.out.println("==================================");
-        System.out.println("   SPACE RPG CONSOLE - REFERENCIA ");
+        System.out.println(" Starfall ");
         System.out.println("==================================");
 
         boolean running = true;
@@ -91,7 +91,6 @@ public class Console_Ui {
         System.out.println("\n✅ Nave creada:");
         System.out.println("Nombre: " + player.getName());
         System.out.println("Modelo: " + player.getShipModel());
-        System.out.println(player.getShipArt());
 
         return player;
     }
@@ -260,7 +259,6 @@ public class Console_Ui {
         System.out.println("\n========== ESTADÍSTICAS ==========");
         System.out.println("Nave: " + player.getName());
         System.out.println("Modelo/Figura: " + player.getShipModel());
-        System.out.println(player.getShipArt());
         System.out.println("Nivel: " + player.getLevel());
         System.out.println(player.getXpText());
         System.out.println("Vida: " + player.getHp() + "/" + player.getMaxHp());
