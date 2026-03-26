@@ -26,7 +26,7 @@ public class Console_Ui {
 
     public void start() {
         System.out.println("==================================");
-        System.out.println(" Starfall ");
+        System.out.println("-------------Starfall-------------");
         System.out.println("==================================");
 
         boolean running = true;
@@ -46,10 +46,10 @@ public class Console_Ui {
                 case 2:
                     try {
                         GameState loaded = saveLoadService.load(SAVE_FILE);
-                        System.out.println("✅ Partida cargada correctamente.");
+                        System.out.println("Partida cargada correctamente.");
                         gameMenu(loaded);
                     } catch (IOException | ClassNotFoundException e) {
-                        System.out.println("❌ Error al cargar partida: " + e.getMessage());
+                        System.out.println("Error al cargar partida: " + e.getMessage());
                     }
                     break;
                 case 3:
@@ -65,7 +65,7 @@ public class Console_Ui {
 
         String name = readNonEmpty("Nombre de tu nave: ");
 
-        System.out.println("Elige la figura/modelo de nave:");
+        System.out.println("Elige el tipo de nave:");
         System.out.println("1. Cazador");
         System.out.println("2. Exploradora");
         System.out.println("3. Titán");
@@ -88,7 +88,7 @@ public class Console_Ui {
 
         Player player = new Player(name, shipModel);
 
-        System.out.println("\n✅ Nave creada:");
+        System.out.println("\n Nave creada:");
         System.out.println("Nombre: " + player.getName());
         System.out.println("Modelo: " + player.getShipModel());
 
@@ -102,13 +102,13 @@ public class Console_Ui {
             Player player = state.getPlayer();
 
             if (!player.isAlive()) {
-                System.out.println("\n💥 Tu nave fue destruida. Fin de la partida.");
+                System.out.println("\n Tu nave fue destruida. Fin de la partida.");
                 inGame = false;
                 continue;
             }
 
             if (state.isGameCompleted()) {
-                System.out.println("\n🏆 Ya completaste la campaña.");
+                System.out.println("\n Ya completaste la campaña.");
                 System.out.println("1. Ver estadísticas");
                 System.out.println("2. Guardar partida");
                 System.out.println("3. Volver al menú principal");
@@ -151,10 +151,10 @@ public class Console_Ui {
                 case 4:
                     try {
                         GameState loaded = saveLoadService.load(SAVE_FILE);
-                        System.out.println("✅ Partida cargada correctamente.");
+                        System.out.println(" Partida cargada correctamente.");
                         state = loaded; // reemplaza estado actual
                     } catch (IOException | ClassNotFoundException e) {
-                        System.out.println("❌ Error al cargar partida: " + e.getMessage());
+                        System.out.println("Error al cargar partida: " + e.getMessage());
                     }
                     break;
                 case 5:
@@ -169,7 +169,7 @@ public class Console_Ui {
         Enemy enemy = combatService.spawnEnemyForStage(state);
 
         System.out.println("\n==================================");
-        System.out.println("🚨 ¡ENEMIGO DETECTADO!");
+        System.out.println("¡ENEMIGO DETECTADO!");
         System.out.println("Enemigo: " + enemy.getName() + " (" + enemy.getSpecies() + ")");
         System.out.println("Nivel enemigo: " + enemy.getLevel());
         System.out.println(enemy.getStatusLine());
@@ -190,14 +190,14 @@ public class Console_Ui {
         if (player.isAlive() && !enemy.isAlive()) {
             System.out.println(combatService.resolveVictory(state, enemy));
         } else if (!player.isAlive()) {
-            System.out.println("💀 Tu nave fue destruida por " + enemy.getName() + ".");
+            System.out.println("Tu nave fue destruida por " + enemy.getName() + ".");
         }
     }
 
     private void runPlayerPhase(Player player, Enemy enemy) {
         int timeLeft = CombatRules.PLAYER_PHASE_SECONDS;
 
-        System.out.println("\n🟢 FASE DEL JUGADOR (10 segundos simulados)");
+        System.out.println("\n FASE DEL JUGADOR (10 segundos simulados)");
         while (timeLeft > 0 && player.isAlive() && enemy.isAlive()) {
             System.out.println("\nTiempo restante de fase: " + timeLeft + "s");
             System.out.println("Jugador -> " + player.getStatusLine());
@@ -242,7 +242,7 @@ public class Console_Ui {
     private void runEnemyPhase(Enemy enemy, Player player) {
         int timeLeft = CombatRules.ENEMY_PHASE_SECONDS;
 
-        System.out.println("\n🔴 FASE DEL ENEMIGO (5 segundos simulados)");
+        System.out.println("\n FASE DEL ENEMIGO (5 segundos simulados)");
         while (timeLeft > 0 && enemy.isAlive() && player.isAlive()) {
             try {
                 Thread.sleep(600); // solo para que se sienta por turnos
@@ -300,9 +300,9 @@ public class Console_Ui {
     private void saveGame(GameState state) {
         try {
             saveLoadService.save(state, SAVE_FILE);
-            System.out.println("✅ Partida guardada en " + SAVE_FILE);
+            System.out.println("Partida guardada en " + SAVE_FILE);
         } catch (IOException | IllegalArgumentException e) {
-            System.out.println("❌ Error al guardar partida: " + e.getMessage());
+            System.out.println("Error al guardar partida: " + e.getMessage());
         }
     }
 

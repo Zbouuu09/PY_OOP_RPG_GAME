@@ -15,7 +15,7 @@ public class CombatRules {
     private final RPGspace2.service.EnemyCreator enemyFactory;
     private final Random random;
 
-    // “Segundos” de fase simulados (simple, como pediste)
+    // “Segundos” de fase simulados
     public static final int PLAYER_PHASE_SECONDS = 10;
     public static final int ENEMY_PHASE_SECONDS = 5;
 
@@ -76,7 +76,7 @@ public class CombatRules {
         Player player = state.getPlayer();
         StringBuilder sb = new StringBuilder();
 
-        sb.append("\n✅ Enemigo destruido: ").append(enemy.getName()).append("\n");
+        sb.append("\n Enemigo destruido: ").append(enemy.getName()).append("\n");
         sb.append(player.gainExperience(enemy.getXpReward()));
 
         player.recoverAfterBattle();
@@ -85,9 +85,9 @@ public class CombatRules {
         state.advanceStage();
 
         if (state.isGameCompleted()) {
-            sb.append("🏆 ¡Has completado los 3 niveles y derrotado a la invasión alienígena!\n");
+            sb.append("¡Has completado los 3 niveles y derrotado a la invasión alienígena!\n");
         } else {
-            sb.append("➡️ Pasas al nivel ").append(state.getCurrentStage()).append(".\n");
+            sb.append("➡ Pasas al nivel ").append(state.getCurrentStage()).append(".\n");
         }
 
         return sb.toString();
