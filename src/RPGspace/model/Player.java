@@ -23,7 +23,7 @@ public class Player extends Character {
         addAbility(new HealAbility(
                 "Reparación Rápida",
                 12,
-                "Microdrones reparan el casco.",
+                "Reparación rápida de la nave.",
                 20
         ));
     }
@@ -106,12 +106,12 @@ public class Player extends Character {
             sb.append("Nueva habilidad desbloqueada: Disparo Triple\n");
         } else if (level == 3) {
             addAbility(new DamageAbility(
-                    "Cañón Omega",
+                    "Cañón ESEN",
                     28,
                     "Cañón frontal de alto impacto.",
                     50
             ));
-            sb.append("Nueva habilidad desbloqueada: Cañón Omega\n");
+            sb.append("Nueva habilidad desbloqueada: Cañón ESEN\n");
         }
 
         return sb.toString();

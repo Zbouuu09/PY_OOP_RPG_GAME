@@ -258,11 +258,11 @@ public class Console_Ui {
     private void showStats(Player player) {
         System.out.println("\n========== ESTADÍSTICAS ==========");
         System.out.println("Nave: " + player.getName());
-        System.out.println("Modelo/Figura: " + player.getShipModel());
+        System.out.println("Modelo: " + player.getShipModel());
         System.out.println("Nivel: " + player.getLevel());
         System.out.println(player.getXpText());
         System.out.println("Vida: " + player.getHp() + "/" + player.getMaxHp());
-        System.out.println("Mana/Energía: " + player.getMana() + "/" + player.getMaxMana());
+        System.out.println("Mana: " + player.getMana() + "/" + player.getMaxMana());
         System.out.println("Ataque: " + player.getAttack());
         System.out.println("Defensa: " + player.getDefense());
         System.out.println("Modo de disparo actual: " + player.getWeaponMode());

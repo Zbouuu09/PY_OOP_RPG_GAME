@@ -80,12 +80,12 @@ public class CombatRules {
         sb.append(player.gainExperience(enemy.getXpReward()));
 
         player.recoverAfterBattle();
-        sb.append("Recuperación post-combate: parte de HP y Mana restaurados.\n");
+        sb.append("Recuperación post combate: parte de HP y Mana restaurados.\n");
 
         state.advanceStage();
 
         if (state.isGameCompleted()) {
-            sb.append("¡Has completado los 3 niveles y derrotado a la invasión alienígena!\n");
+            sb.append("¡Has completado los 3 niveles y derrotado a la invasión ESEN!\n");
         } else {
             sb.append("➡ Pasas al nivel ").append(state.getCurrentStage()).append(".\n");
         }
